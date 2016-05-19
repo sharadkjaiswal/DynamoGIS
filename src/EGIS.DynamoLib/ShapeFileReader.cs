@@ -26,7 +26,7 @@ namespace EGIS.DynamoLib
         /// <summary>
         /// Represents the attributes Database
         /// </summary>
-        private static DbfReader Database { get; set; }
+        private DbfReader Database { get; set; }
 
         /// <summary>
         /// Constructs a ShapeFile using a path to a .shp shape file
@@ -74,22 +74,14 @@ namespace EGIS.DynamoLib
             {
                 var points = pts.Select(p => Point.ByCoordinates(p.X, p.Y, p.Z)).ToList();
 
-                //ctrl k d
-                {
-                    var pts0 = new List<Point>();
-                    for (int pi = 0; pi < points.Count - 1; ++pi)
-                    {
-                        pts0.Add(points[pi]);
-                        if (points[pi].IsAlmostEqualTo(points[pi + 1]))
-                        {
-                            ++pi;
-                        }
-                    }
-                    points = pts0;
-                }
+                var pts0 = points.Where((x, i) => i == 0 || !(x.IsAlmostEqualTo(points[i - 1]))).ToList();
 
-                var polygon = PolyCurve.ByPoints(points);
+                var polygon = PolyCurve.ByPoints(pts0);
                 foreach (var item in points)
+                {
+                    item.Dispose();
+                }
+                foreach (var item in pts0)
                 {
                     item.Dispose();
                 }
@@ -116,7 +108,7 @@ namespace EGIS.DynamoLib
         /// Returns all shapes available in this shape file.
         /// </summary>
         /// <returns>List of PolyCurve</returns>
-        public IEnumerable<IEnumerable<Curve>> GetAllShapes2()
+        public IEnumerable<IEnumerable<Curve>> GetAllShapesInAllRecords()
         {
             var shapes = new List<IEnumerable<Curve>>();
             for (int i = 0; i < RecordCount; i++)
@@ -188,7 +180,8 @@ namespace EGIS.DynamoLib
         public IEnumerable<string> GetRecordsAtFieldName(string fieldName)
         {
             int index = Database.IndexOfFieldName(fieldName);
-            if (index > -1) { 
+            if (index > -1)
+            {
                 return Database.GetRecords(index);
             }
             return null;
