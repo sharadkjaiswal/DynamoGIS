@@ -1,0 +1,35 @@
+<Workspace Version="1.0.0.1431" X="0" Y="0" zoom="1" Name="Home" Description="" RunType="Automatic" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap />
+  <Elements>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="c941060b-7511-4512-a776-441205a806c1" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Shape.LoadFromFile" x="230.75" y="150.5" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="C:\Users\sharad\AppData\Roaming\Dynamo\Dynamo%20Core\1.0\packages\DynamoGIS\bin\EGIS.DynamoLib.dll" function="EGIS.DynamoLib.Shape.LoadFromFile@string" />
+    <CoreNodeModels.Input.Filename guid="dec66977-c5d1-439e-ad99-c4f420a21a9e" type="CoreNodeModels.Input.Filename" nickname="File Path" x="0.75" y="150.5" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.String>Data\IND_rails\IND_rails.shp</System.String>
+      <HintPath>E:\GitHub\DynamoGIS\Examples\Data\IND_rails\IND_rails.shp</HintPath>
+    </CoreNodeModels.Input.Filename>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="f757d92d-2845-4f9f-973e-77fd212a38f8" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Shape.RecordCount" x="745.75" y="275.5" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="C:\Users\sharad\AppData\Roaming\Dynamo\Dynamo%20Core\1.0\packages\DynamoGIS\bin\EGIS.DynamoLib.dll" function="EGIS.DynamoLib.Shape.RecordCount" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="8c24407d-8fb7-4251-aeaf-b8821ec14fb9" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Shape.GetAllShapes" x="490.75" y="29.5" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="C:\Users\sharad\AppData\Roaming\Dynamo\Dynamo%20Core\1.0\packages\DynamoGIS\bin\EGIS.DynamoLib.dll" function="EGIS.DynamoLib.Shape.GetAllShapes" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="77bed8c4-3dfc-4660-8b74-40018ce5da04" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Count" x="745.75" y="152.5" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="BuiltIn" function="Count@var[]..[]" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="7a6e754c-ba31-43e6-867f-d85a69b486bb" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Shape.GetAllShapesInAllRecords" x="490.75" y="152.5" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="C:\Users\sharad\AppData\Roaming\Dynamo\Dynamo%20Core\1.0\packages\DynamoGIS\bin\EGIS.DynamoLib.dll" function="EGIS.DynamoLib.Shape.GetAllShapesInAllRecords" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="50e59a58-ef5f-4ad4-869c-04aca1a9f6d0" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Count" x="745.75" y="29.5" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="BuiltIn" function="Count@var[]..[]" />
+    <CoreNodeModels.Watch guid="5b88dc2a-a3ab-4de8-a48e-924e09c77339" type="CoreNodeModels.Watch" nickname="Watch" x="921.75" y="29.5" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" />
+    <CoreNodeModels.Watch guid="0d863267-af8e-4c2a-b7e4-8425a7ad0430" type="CoreNodeModels.Watch" nickname="Watch" x="921.75" y="152.5" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" />
+    <CoreNodeModels.Watch guid="188d6e38-0b65-4d96-9761-6b7f827d628b" type="CoreNodeModels.Watch" nickname="Watch" x="921.75" y="275.5" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" />
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="c941060b-7511-4512-a776-441205a806c1" start_index="0" end="f757d92d-2845-4f9f-973e-77fd212a38f8" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="c941060b-7511-4512-a776-441205a806c1" start_index="0" end="8c24407d-8fb7-4251-aeaf-b8821ec14fb9" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="c941060b-7511-4512-a776-441205a806c1" start_index="0" end="7a6e754c-ba31-43e6-867f-d85a69b486bb" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="dec66977-c5d1-439e-ad99-c4f420a21a9e" start_index="0" end="c941060b-7511-4512-a776-441205a806c1" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="f757d92d-2845-4f9f-973e-77fd212a38f8" start_index="0" end="188d6e38-0b65-4d96-9761-6b7f827d628b" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="8c24407d-8fb7-4251-aeaf-b8821ec14fb9" start_index="0" end="50e59a58-ef5f-4ad4-869c-04aca1a9f6d0" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="77bed8c4-3dfc-4660-8b74-40018ce5da04" start_index="0" end="0d863267-af8e-4c2a-b7e4-8425a7ad0430" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="7a6e754c-ba31-43e6-867f-d85a69b486bb" start_index="0" end="77bed8c4-3dfc-4660-8b74-40018ce5da04" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="50e59a58-ef5f-4ad4-869c-04aca1a9f6d0" start_index="0" end="5b88dc2a-a3ab-4de8-a48e-924e09c77339" end_index="0" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="84.2097321100112" eyeY="-25.5612889010222" eyeZ="-16.4517273994728" lookX="-1.79723458956438" lookY="25.5612889010222" lookZ="-4.07282971417471" upX="0.40333080291748" upY="-0.0436193868517876" upZ="0.914013981819153" />
+  </Cameras>
+</Workspace>

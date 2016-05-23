@@ -119,6 +119,7 @@ namespace EGIS.DynamoLib
         /// <summary>
         /// Returns all points in the shape file.
         /// </summary>
+        /// <param name="index">Record index for the shape</param>
         /// <returns></returns>
         public IEnumerable<IEnumerable<Point>> GetAllPoints(int index)
         {
@@ -188,7 +189,7 @@ namespace EGIS.DynamoLib
         /// Gets the field value at given record and field indexes.
         /// </summary>
         /// <param name="recordIndex">record index</param>
-        /// /// <param name="fieldIndex">field index</param>
+        /// <param name="fieldIndex">field index</param>
         /// <returns>String</returns>
         public string GetFieldValue(int recordIndex, int fieldIndex)
         {
