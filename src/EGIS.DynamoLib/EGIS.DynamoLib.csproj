@@ -37,16 +37,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DynamoServices">
+      <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.1.0.0\lib\net45\DynamoServices.dll</HintPath>
+    </Reference>
     <Reference Include="EGIS.ShapeFileLib">
       <HintPath>..\..\extern\EGIS\EGIS.ShapeFileLib.dll</HintPath>
     </Reference>
     <Reference Include="ProtoGeometry">
-      <HintPath>..\..\extern\ProtoGeometry\ProtoGeometry.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="ProtoInterface">
-      <HintPath>..\..\extern\ProtoGeometry\ProtoInterface.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.1.0.0\lib\net45\ProtoGeometry.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -59,6 +57,9 @@
   <ItemGroup>
     <Compile Include="ShapeFileReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

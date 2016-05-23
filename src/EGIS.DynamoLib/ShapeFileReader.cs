@@ -81,10 +81,7 @@ namespace EGIS.DynamoLib
                 {
                     item.Dispose();
                 }
-                foreach (var item in pts0)
-                {
-                    item.Dispose();
-                }
+                
                 return polygon;
             });
         }
@@ -105,7 +102,7 @@ namespace EGIS.DynamoLib
         }
 
         /// <summary>
-        /// Returns all shapes available in this shape file.
+        /// Returns all shapes in accordance to the records available in this shape file.
         /// </summary>
         /// <returns>List of PolyCurve</returns>
         public IEnumerable<IEnumerable<Curve>> GetAllShapesInAllRecords()

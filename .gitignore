@@ -1,4 +1,5 @@
 bin
 samples
+src/packages
 src/EGIS.DynamoLib/obj
 src/DynamoGIS.v11.suo
