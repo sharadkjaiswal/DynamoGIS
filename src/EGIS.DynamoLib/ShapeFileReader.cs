@@ -3,6 +3,7 @@ using System.Linq;
 using Autodesk.DesignScript.Geometry;
 using EGIS.ShapeFileLib;
 using System.IO;
+using System;
 
 namespace EGIS.DynamoLib
 {
@@ -16,7 +17,7 @@ namespace EGIS.DynamoLib
     /// <summary>
     /// Represents the shape read from ShapeFile
     /// </summary>
-    public class Shape
+    public class Shape : IDisposable
     {
         /// <summary>
         /// Represents raw shape data
@@ -46,6 +47,17 @@ namespace EGIS.DynamoLib
             }
             string dbfFilePath = Path.ChangeExtension(shapeFilePath, "dbf");
             Database = new DbfReader(dbfFilePath);
+        }
+
+        /// <summary>
+        /// Closes the Database at the end of the execution
+        /// </summary>
+        public void Dispose()
+        {
+            if (Database != null)
+            {
+                Database.Close();
+            }
         }
 
         /// <summary>
@@ -81,7 +93,7 @@ namespace EGIS.DynamoLib
                 {
                     item.Dispose();
                 }
-                
+
                 return polygon;
             });
         }
